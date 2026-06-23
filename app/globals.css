@@ -1,0 +1,188 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   THEME TOKENS
+   Dark = default (deep navy/black like the design)
+   Light = white glassmorphism
+   ============================================================ */
+:root,
+.dark {
+  --bg: #05070d;
+  --bg-grad-1: #070b16;
+  --bg-grad-2: #05070d;
+  --panel: rgba(17, 24, 39, 0.55);
+  --panel-solid: #0b1120;
+  --panel-border: rgba(255, 255, 255, 0.07);
+  --panel-border-hover: rgba(59, 130, 246, 0.35);
+  --sidebar: #070b14;
+  --sidebar-border: rgba(255, 255, 255, 0.06);
+  --text: #e5e7eb;
+  --text-strong: #ffffff;
+  --text-muted: #94a3b8;
+  --text-faint: #64748b;
+  --accent: #3b82f6;
+  --accent-soft: rgba(59, 130, 246, 0.15);
+  --accent-text: #60a5fa;
+  --track: rgba(255, 255, 255, 0.08);
+  --chip: rgba(59, 130, 246, 0.12);
+  --chip-text: #93c5fd;
+  --nav-active: rgba(59, 130, 246, 0.14);
+  --green: #34d399;
+  --glow: rgba(59, 130, 246, 0.55);
+  --shadow: rgba(0, 0, 0, 0.5);
+}
+
+.light {
+  /* near-white base, very subtle cool tint */
+  --bg: #fbfcfe;
+  --bg-grad-1: #ffffff;
+  --bg-grad-2: #f4f7fc;
+  /* glassier panels: more transparent, frostier */
+  --panel: rgba(255, 255, 255, 0.55);
+  --panel-solid: rgba(255, 255, 255, 0.92);
+  --panel-border: rgba(255, 255, 255, 0.75);
+  --panel-border-hover: rgba(59, 130, 246, 0.35);
+  --sidebar: rgba(255, 255, 255, 0.6);
+  --sidebar-border: rgba(15, 23, 42, 0.05);
+  --text: #3b4757;
+  --text-strong: #0f172a;
+  --text-muted: #6b7686;
+  --text-faint: #a3acba;
+  --accent: #2563eb;
+  --accent-soft: rgba(37, 99, 235, 0.08);
+  --accent-text: #2563eb;
+  --track: rgba(15, 23, 42, 0.06);
+  --chip: rgba(37, 99, 235, 0.07);
+  --chip-text: #1d4ed8;
+  --nav-active: rgba(37, 99, 235, 0.07);
+  --green: #059669;
+  /* much fainter glow so it reads as clean white glass */
+  --glow: rgba(147, 197, 253, 0.18);
+  --shadow: rgba(15, 23, 42, 0.07);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  transition: background-color 0.5s ease, color 0.4s ease;
+  overflow-x: hidden;
+}
+
+/* Layered ambient background */
+.app-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(900px circle at 78% 12%, var(--glow), transparent 45%),
+    radial-gradient(700px circle at 20% 90%, var(--accent-soft), transparent 50%),
+    linear-gradient(160deg, var(--bg-grad-1), var(--bg-grad-2));
+  opacity: 0.9;
+  transition: background 0.5s ease, opacity 0.5s ease;
+}
+
+/* In light mode the glow is barely-there so the page reads as clean white glass */
+.light .app-bg {
+  opacity: 0.6;
+}
+
+/* RTL helpers */
+[dir="rtl"] .flip-x {
+  transform: scaleX(-1);
+}
+
+/* Glass panel */
+.glass {
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 8px 30px var(--shadow);
+  transition: border-color 0.4s ease, transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.4s ease, background-color 0.4s ease;
+}
+
+.glass:hover {
+  border-color: var(--panel-border-hover);
+}
+
+/* Frostier glass in light mode + a soft white inner highlight */
+.light .glass {
+  backdrop-filter: blur(24px) saturate(160%);
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
+  box-shadow: 0 8px 30px var(--shadow), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--track);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* Accessibility: reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Keyboard focus visibility */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* Skill bar fill */
+.bar-track {
+  background: var(--track);
+}
+.bar-fill {
+  background: linear-gradient(90deg, var(--accent), var(--accent-text));
+  box-shadow: 0 0 10px var(--accent-soft);
+}
+
+/* The project image that scrolls on hover */
+.shot-frame {
+  position: relative;
+  overflow: hidden;
+}
+.shot-img {
+  width: 100%;
+  display: block;
+  transition: transform 4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.shot-frame:hover .shot-img {
+  /* scroll down to reveal the rest of the page screenshot */
+  transform: translateY(calc(-100% + 170px));
+}
+
+/* Chips */
+.chip {
+  background: var(--chip);
+  color: var(--chip-text);
+}
