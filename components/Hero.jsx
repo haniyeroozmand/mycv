@@ -11,7 +11,7 @@ export default function Hero() {
 
   return (
     <section id="home" className="scroll-mt-8 pt-4">
-      {/* top baaaaar: availability + download */}
+      {/* top baaaaar: avllllailability + download */}
       <div className="flex flex-wrap items-center justify-between gap-4">
         <motion.div
           initial={{ opacity: 0, y: -10 }}
