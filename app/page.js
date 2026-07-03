@@ -36,13 +36,6 @@ export default function Page() {
   const [active, setActive] = useState("home");
   const [loading, setLoading] = useState(true);
 
-  // Show the preloader once per browser session.
-  useEffect(() => {
-    const seen = sessionStorage.getItem("haniye-loaded");
-    if (seen) {
-      setLoading(false);
-    }
-  }, []);
 
   // Lock scroll while the preloader is visible.
   useEffect(() => {
@@ -53,7 +46,6 @@ export default function Page() {
   }, [loading]);
 
   const finishLoading = () => {
-    sessionStorage.setItem("haniye-loaded", "1");
     setLoading(false);
   };
 
@@ -83,6 +75,7 @@ export default function Page() {
       <main className="lg:ps-[180px]">
         <div className="mx-auto max-w-[1180px] px-4 pb-12 sm:px-6">
           <MobileBar />
+          <div className="h-16 lg:hidden" />
 
           <div className="grid gap-6 lg:grid-cols-[1fr_320px]">
             {/* Main column */}

@@ -49,9 +49,8 @@ export default function Sidebar({ active }) {
 
   const socials = [
     { icon: Github, href: "https://github.com/", label: "GitHub" },
-    { icon: Linkedin, href: "https://linkedin.com/", label: "LinkedIn" },
-    { icon: Twitter, href: "https://twitter.com/", label: "Twitter" },
-    { icon: Mail, href: "mailto:amanverma.dev@gmail.com", label: "Email" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/haniye-roozmand-541721296/", label: "LinkedIn" },
+    { icon: Mail, href: "mailto:haniyerz79@gmail.com", label: "Email" },
   ];
 
   return (
@@ -81,7 +80,7 @@ export default function Sidebar({ active }) {
             }}
           >
             <img
-              src="https://i.pravatar.cc/200?img=68"
+              src="/img/me3.webp"
               alt={t.name}
               className="h-full w-full rounded-full object-cover"
               style={{ background: "var(--panel-solid)" }}

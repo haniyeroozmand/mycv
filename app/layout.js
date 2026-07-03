@@ -15,9 +15,9 @@ const vazir = Vazirmatn({
 });
 
 export const metadata = {
-  title: "Haniye — Full Stack Developer",
+  title: "Haniye — Front-End Developer",
   description:
-    "Portfolio of Haniye, a Full Stack Developer building exceptional, high-performance web applications.",
+    "Portfolio of Haniye, a Front-End Developer building exceptional, high-performance web applications.",
 };
 
 export default function RootLayout({ children }) {

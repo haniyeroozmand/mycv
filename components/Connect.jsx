@@ -11,9 +11,8 @@ export default function Connect() {
 
   const socials = [
     { icon: Github, href: "https://github.com/", label: "GitHub" },
-    { icon: Linkedin, href: "https://linkedin.com/", label: "LinkedIn" },
-    { icon: Twitter, href: "https://twitter.com/", label: "Twitter" },
-    { icon: Mail, href: "mailto:amanverma.dev@gmail.com", label: "Email" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/haniye-roozmand-541721296/", label: "LinkedIn" },
+    { icon: Mail, href: "mailto:haniyerz79@gmail.com", label: "Email" },
   ];
 
   return (
@@ -30,7 +29,7 @@ export default function Connect() {
         </p>
 
         <a
-          href="mailto:amanverma.dev@gmail.com"
+          href="mailto:haniyerz79@gmail.com"
           className="mt-4 flex w-full items-center justify-center gap-2 rounded-xl px-4 py-3 text-[13.5px] font-semibold text-white transition-all duration-300 ease-smooth hover:-translate-y-0.5"
           style={{
             background: "linear-gradient(135deg, var(--accent), var(--accent-text))",

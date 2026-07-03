@@ -12,6 +12,7 @@ import {
   GitBranch,
   Container,
   Cloud,
+
 } from "lucide-react";
 
 const map = {
@@ -19,14 +20,10 @@ const map = {
   react: Atom,
   typescript: FileType,
   tailwind: Wind,
-  nodejs: Hexagon,
   design: Palette,
   api: Code2,
   mongodb: Leaf,
-  postgres: Database,
   git: GitBranch,
-  docker: Container,
-  aws: Cloud,
 };
 
 export default function SkillIcon({ name, className = "" }) {
