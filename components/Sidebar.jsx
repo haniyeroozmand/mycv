@@ -80,7 +80,7 @@ export default function Sidebar({ active }) {
             }}
           >
             <img
-              src="/img/me3.webp"
+              src="/img/me.webp"
               alt={t.name}
               className="h-full w-full rounded-full object-cover"
               style={{ background: "var(--panel-solid)" }}

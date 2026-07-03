@@ -48,7 +48,7 @@ export default function MobileBar() {
       >
         <div className="flex items-center gap-2.5">
           <img
-            src="/img/me3.webp"
+            src="/img/me.webp"
             alt={t.name}
             className={`rounded-full object-cover transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] ${
               scrolled ? "h-[45px] w-[45px]" : "h-9 w-9"
