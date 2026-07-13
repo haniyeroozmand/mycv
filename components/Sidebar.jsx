@@ -73,14 +73,14 @@ export default function Sidebar({ active }) {
           className="relative"
         >
           <div
-            className="h-[88px] w-[88px] rounded-full p-[2px]"
+            className="h-[94px] w-[90px] rounded-full p-[2px]"
             style={{
               background:
                 "conic-gradient(from 180deg, var(--accent), var(--accent-text), var(--accent))",
             }}
           >
             <img
-              src="/img/me.webp"
+              src="/img/me2.webp"
               alt={t.name}
               className="h-full w-full rounded-full object-cover"
               style={{ background: "var(--panel-solid)" }}

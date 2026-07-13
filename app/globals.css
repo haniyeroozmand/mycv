@@ -80,6 +80,10 @@ body {
   overflow-x: hidden;
 }
 
+html[lang="fa"] body {
+  font-family: var(--font-fa), var(--font-sans), system-ui, sans-serif;
+}
+
 /* Layered ambient background */
 .app-bg {
   position: fixed;

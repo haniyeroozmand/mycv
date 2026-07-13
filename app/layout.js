@@ -1,5 +1,6 @@
 import "./globals.css";
-import { Inter, Vazirmatn } from "next/font/google";
+import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import { AppProvider } from "@/lib/app-context";
 
 const inter = Inter({
@@ -8,8 +9,24 @@ const inter = Inter({
   display: "swap",
 });
 
-const vazir = Vazirmatn({
-  subsets: ["arabic"],
+const vazir = localFont({
+  src: [
+    {
+      path: "../public/fonts/YekanBakhFaNum-Regular.woff",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/YekanBakhFaNum-SemiBold.woff",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/YekanBakhFaNum-Bold.woff",
+      weight: "700",
+      style: "normal",
+    },
+  ],
   variable: "--font-fa",
   display: "swap",
 });

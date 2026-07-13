@@ -19,9 +19,10 @@ export default function Testimonials() {
   }, [items.length]);
 
   const avatars = [
-    "https://i.pravatar.cc/100?img=12",
-    "https://i.pravatar.cc/100?img=32",
-    "https://i.pravatar.cc/100?img=51",
+    "/img/images (4).png",
+    "/img/images (4).png",
+    "/img/images (4).png",
+
   ];
 
   return (

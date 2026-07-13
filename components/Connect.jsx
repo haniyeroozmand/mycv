@@ -10,7 +10,7 @@ export default function Connect() {
   const t = content[lang];
 
   const socials = [
-    { icon: Github, href: "https://github.com/", label: "GitHub" },
+    { icon: Github, href: "https://github.com/haniyeroozmand", label: "GitHub" },
     { icon: Linkedin, href: "https://www.linkedin.com/in/haniye-roozmand-541721296/", label: "LinkedIn" },
     { icon: Mail, href: "mailto:haniyerz79@gmail.com", label: "Email" },
   ];
