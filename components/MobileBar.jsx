@@ -20,7 +20,7 @@ export default function MobileBar() {
 
   return (
     <div
-      className={`fixed left-0 right-0 z-40 flex flex-col items-center px-4 transition-[top] duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] sm:px-6 lg:hidden ${
+      className={`no-print fixed left-0 right-0 z-40 flex flex-col items-center px-4 transition-[top] duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] sm:px-6 lg:hidden ${
         scrolled ? "top-3" : "top-0"
       }`}
     >

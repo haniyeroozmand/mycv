@@ -31,12 +31,13 @@ export default function Hero() {
           {t.available}
         </motion.div>
 
-        <motion.a
+        <motion.button
+          type="button"
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          href="#"
-          className="inline-flex items-center gap-2 rounded-xl px-4 py-2 text-[13px] font-semibold text-white transition-all duration-300 ease-smooth hover:-translate-y-0.5"
+          onClick={() => window.print()}
+          className="no-print inline-flex items-center gap-2 rounded-xl px-4 py-2 text-[13px] font-semibold text-white transition-all duration-300 ease-smooth hover:-translate-y-0.5"
           style={{
             background: "linear-gradient(135deg, var(--accent), var(--accent-text))",
             boxShadow: "0 8px 24px var(--accent-soft)",
@@ -44,7 +45,7 @@ export default function Hero() {
         >
           <Download className="h-4 w-4" />
           {t.downloadResume}
-        </motion.a>
+        </motion.button>
       </div>
 
       <div className="mt-8 grid items-center gap-8 lg:grid-cols-[1.1fr_0.9fr]">

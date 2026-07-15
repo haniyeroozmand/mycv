@@ -190,3 +190,41 @@ html[lang="fa"] body {
   background: var(--chip);
   color: var(--chip-text);
 }
+
+/* ============================================================
+   PRINT (used by the "Download Resume" button -> window.print())
+   Strip the app chrome and force a clean, light, single-column
+   layout so the "Save as PDF" output reads like a resume.
+   ============================================================ */
+@media print {
+  .no-print,
+  .app-bg {
+    display: none !important;
+  }
+
+  html,
+  body {
+    background: #ffffff !important;
+    color: #111827 !important;
+  }
+
+  main {
+    padding-inline-start: 0 !important;
+  }
+
+  .grid {
+    display: block !important;
+  }
+
+  section,
+  .space-y-6 > * {
+    break-inside: avoid;
+  }
+
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+}

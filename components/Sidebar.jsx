@@ -55,7 +55,7 @@ export default function Sidebar({ active }) {
 
   return (
     <aside
-      className="hidden lg:flex fixed top-0 z-30 h-screen w-[180px] flex-col"
+      className="no-print hidden lg:flex fixed top-0 z-30 h-screen w-[180px] flex-col"
       style={{
         insetInlineStart: 0,
         background: "var(--sidebar)",
